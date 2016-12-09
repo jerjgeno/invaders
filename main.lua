@@ -20,12 +20,18 @@ function love.update(dt)
     player.x = player.x - unit
   end
 
-  if love.keyboard.isDown(" ") then
+  if love.keyboard.isDown("space") then
     player.fire()
   end
 end
 
 function love.draw()
+  -- Print Love2D versoin
+  local major, minor, revision, codename = love.getVersion()
+  local str = string.format("Version %d.%d.%d - %s", major, minor, revision, codename)
+  love.graphics.print(str, 20, 20)
+
+  
   love.graphics.rectangle('fill',player.x,400,80,20)
   for _,v in pairs(player.bullets) do
     love.graphics.rectangle('fill',v.x,v.y,10,10)
