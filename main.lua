@@ -2,7 +2,7 @@
 
 function love.load()
   player = {}
-  player.x = 0
+  player.x = 100
   player.bullets = {}
   player.fire = function()
     bullet = {}
